@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Card, Icon } from 'semantic-ui-react'
+import '../Card.css';
 
 const card = {
     width: '300px',
@@ -7,7 +8,6 @@ const card = {
     textAlign: 'center',
     justifyContent:'center'
 }
-
 
 class CallsAnswered extends Component   {
 
