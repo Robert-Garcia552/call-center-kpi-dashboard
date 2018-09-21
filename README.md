@@ -1,7 +1,7 @@
 # Call Center KPI Dashboard
 
 ### Synopsis
-This is for a company that I would like to work for.
+Call center dashboard that will display key performance indicators for employees reference.
 
 ### Author
 Robert Garcia
