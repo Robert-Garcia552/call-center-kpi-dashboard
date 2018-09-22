@@ -16,7 +16,7 @@ class AverageHandleTime extends Component   {
             <div>
                 <Card style={card}>
                     <h1>Average Handle Time</h1>
-                    <p>{Math.floor(Math.random() * 20)} mins</p>
+                    <h3>{Math.floor(Math.random() * 20)} mins</h3>
                 </Card>
             </div>
         );

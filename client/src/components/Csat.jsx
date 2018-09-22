@@ -16,7 +16,7 @@ class Csat extends Component   {
             <div>
                 <Card style={card}>
                     <h1>CSAT</h1>
-                    <p>{Math.floor(Math.random() * 20)}%</p>
+                    <h3>{Math.floor(Math.random() * 20)}%</h3>
                 </Card>
             </div>
         );
