@@ -9,6 +9,7 @@ const card = {
     justifyContent:'center'
 }
 
+
 class Graph extends Component   {
 
     render()   {
@@ -22,15 +23,7 @@ class Graph extends Component   {
                             axes
                             colorBars
                             grid
-                            data={[
-                            {x: 'Sunday', y: Math.floor(Math.random() * 20)},
-                            {x: 'Monday', y: Math.floor(Math.random() * 20)},
-                            {x: 'Tuesday', y: Math.floor(Math.random() * 20)},
-                            {x: 'Wednesday', y: Math.floor(Math.random() * 20)},
-                            {x: 'Thursday', y: Math.floor(Math.random() * 20)},
-                            {x: 'Friday', y: Math.floor(Math.random() * 20)},
-                            {x: 'Saturday', y: Math.floor(Math.random() * 20)}
-                          ]}
+                            data={this.props.data}
                           />
                     </span>
                     </Card>
