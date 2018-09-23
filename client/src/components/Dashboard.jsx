@@ -4,24 +4,22 @@ import Queue from './Queue';
 import Csat from './Csat';
 import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Image } from 'semantic-ui-react';
+import axios from 'axios';
 
 class Dashboard extends Component   {
     state = {
         data: []
     }
 
-componentDidMount() {
-    const charting  =   [
-        {x: 'Sunday', y: Math.floor(Math.random() * 20)},
-        {x: 'Monday', y: Math.floor(Math.random() * 20)},
-        {x: 'Tuesday', y: Math.floor(Math.random() * 20)},
-        {x: 'Wednesday', y: Math.floor(Math.random() * 20)},
-        {x: 'Thursday', y: Math.floor(Math.random() * 20)},
-        {x: 'Friday', y: Math.floor(Math.random() * 20)},
-        {x: 'Saturday', y: Math.floor(Math.random() * 20)}
-    ]
-    this.setState({data: charting })
+async componentDidMount() {
+    await axios.get('/api/data')
+    .then(({data}) => {
+        this.setState({data: data})
+        console.log(this.state.data);
+      }).catch(err => {
+        console.log(err.message);
+      });
 };
 
     render()   {

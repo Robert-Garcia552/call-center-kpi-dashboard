@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Robert-Garcia552/call-center-kpi-dashboard#ReadMe",
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
   }
 }
