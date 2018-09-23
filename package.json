@@ -1,0 +1,23 @@
+{
+  "name": "call-center-kpi-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robert-Garcia552/call-center-kpi-dashboard.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/Robert-Garcia552/call-center-kpi-dashboard/issues"
+  },
+  "homepage": "https://github.com/Robert-Garcia552/call-center-kpi-dashboard#ReadMe",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3"
+  }
+}

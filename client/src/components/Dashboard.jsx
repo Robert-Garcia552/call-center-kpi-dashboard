@@ -3,15 +3,26 @@ import CallsAnswered from './CallsAnswered';
 import Queue from './Queue';
 import Csat from './Csat';
 import AverageHandleTime from './AverageHandleTime';
-import BarChart from './BarChart';
+import Graph from './Graph';
 import { Grid, Image } from 'semantic-ui-react'
-
-
 
 class Dashboard extends Component   {
     state = {
-        barChartData: {}
+        data: []
     }
+
+componentDidMount() {
+    const charting  =   [
+        {x: 'Sunday', y: Math.floor(Math.random() * 20)},
+        {x: 'Monday', y: Math.floor(Math.random() * 20)},
+        {x: 'Tuesday', y: Math.floor(Math.random() * 20)},
+        {x: 'Wednesday', y: Math.floor(Math.random() * 20)},
+        {x: 'Thursday', y: Math.floor(Math.random() * 20)},
+        {x: 'Friday', y: Math.floor(Math.random() * 20)},
+        {x: 'Saturday', y: Math.floor(Math.random() * 20)}
+    ]
+    this.setState({data: charting })
+};
 
     render()   {
         return  (
@@ -24,9 +35,9 @@ class Dashboard extends Component   {
                 <Grid.Row  columns={2}>
                     <Csat/>
                     <AverageHandleTime/>
-                    <BarChart barChartData={this.state.barChartData}/>
+                    <Graph 
+                        data={this.state.data}/>
                 </Grid.Row>
-
             </Grid>
             </div>
         );

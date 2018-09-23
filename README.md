@@ -11,4 +11,4 @@ Work in progress
 
 ### License
 No License specified. Please reference https://choosealicense.com/no-permission/. 
-I am not granting permission for private, public, or commercial use at the moment.
+I am not granting permission for private, public, or commercial use.
