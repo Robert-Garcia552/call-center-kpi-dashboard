@@ -7,7 +7,11 @@ import BarChart from './BarChart';
 import { Grid, Image } from 'semantic-ui-react'
 
 
+
 class Dashboard extends Component   {
+    state = {
+        barChartData: {}
+    }
 
     render()   {
         return  (
@@ -20,7 +24,7 @@ class Dashboard extends Component   {
                 <Grid.Row  columns={2}>
                     <Csat/>
                     <AverageHandleTime/>
-                    <BarChart/>
+                    <BarChart barChartData={this.state.barChartData}/>
                 </Grid.Row>
 
             </Grid>
