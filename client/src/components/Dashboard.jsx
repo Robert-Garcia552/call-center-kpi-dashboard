@@ -11,10 +11,10 @@ class Dashboard extends Component   {
     state = {
         data: [],
         csat: '',
-        callsAnswered: ''
+        callsAnswered: '',
+        averageHandleTime: '',
+        queue: ''
     }
-
-
 
 async componentDidMount() {
     await axios.get('/api/data')
@@ -27,19 +27,31 @@ async componentDidMount() {
     await axios.get('/api/csat')
         .then((res) => {
             this.setState({csat: res.data})
-            console.log(this.state.csat)
+            console.log(`CSAT: ${this.state.csat}`)
         }).catch(err => {
             console.log(err.message);
         });
     await axios.get('/api/callsAnswered')
     .then((res) => {
         this.setState({callsAnswered: res.data})
-        console.log(this.state.callsAnswered)
+        console.log(`Calls Answered: ${this.state.callsAnswered}`)
     }).catch(err => {
         console.log(err.message);
     });
-  
-    
+    await axios.get('/api/averageHandleTime')
+    .then((res) => {
+        this.setState({averageHandleTime: res.data})
+        console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
+    }).catch(err => {
+        console.log(err.message);
+    });
+    await axios.get('/api/queue')
+    .then((res) => {
+        this.setState({queue: res.data})
+        console.log(`Queue: ${this.state.queue}`)
+    }).catch(err => {
+        console.log(err.message);
+    });   
 };
 
 // async componentDidUpdate(prevState) {
@@ -64,13 +76,17 @@ async componentDidMount() {
                     <CallsAnswered
                         callsAnswered={this.state.callsAnswered}
                     />
-                    <Queue/>
+                    <Queue
+                        queue={this.state.queue}
+                    />
                 </Grid.Row>
                 <Grid.Row  columns={2}>
                     <Csat
                         csat={this.state.csat}
                     />
-                    <AverageHandleTime/>
+                    <AverageHandleTime
+                        averageHandleTime={this.state.averageHandleTime}
+                    />
                     <Graph 
                         data={this.state.data}/>
                 </Grid.Row>

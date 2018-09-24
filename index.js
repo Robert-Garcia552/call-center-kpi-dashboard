@@ -1,5 +1,4 @@
 const express = require('express');
-const axios = require('axios');
 const app = express();
 
 var port = process.env.PORT || 5000;
@@ -22,6 +21,14 @@ app.get('/api/csat', (req, res) => {
 })
 
 app.get('/api/callsAnswered', (req, res) => {
+    res.send(`${Math.floor(Math.random() * 20)}`);
+})
+
+app.get('/api/averageHandleTime', (req, res) => {
+    res.send(`${Math.floor(Math.random() * 20)}`);
+})
+
+app.get('/api/queue', (req, res) => {
     res.send(`${Math.floor(Math.random() * 20)}`);
 })
 

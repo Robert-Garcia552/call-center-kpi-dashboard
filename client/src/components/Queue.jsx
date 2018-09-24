@@ -15,7 +15,7 @@ class Queue extends Component   {
             <div>
                 <Card style={card}>
                     <h1>Queue</h1>
-                    <h3>{Math.floor(Math.random() * 20)}</h3>
+                    <h3>{this.props.queue}</h3>
                 </Card>
             </div>
         );
