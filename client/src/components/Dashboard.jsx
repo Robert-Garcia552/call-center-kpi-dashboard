@@ -6,6 +6,7 @@ import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
 import { Grid } from 'semantic-ui-react';
 import axios from 'axios';
+import '../Card.css';
 
 class Dashboard extends Component   {
     state = {
@@ -72,7 +73,7 @@ async componentDidMount() {
         return  (
             <div>
             <Grid centered columns='equal'>
-                <Grid.Row  columns={2} style={{marginTop: '20px'}}>
+                <Grid.Row  columns={2} id="toprow">
                     <CallsAnswered
                         callsAnswered={this.state.callsAnswered}
                     />
