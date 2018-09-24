@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Call center KPIs Dashboard",
   "main": "index.js",
+  "engines": {
+    "node": ">=10.3.0"
+ },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && yarn install && yarn build",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
