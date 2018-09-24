@@ -13,7 +13,8 @@ class Dashboard extends Component   {
         csat: '',
         callsAnswered: '',
         averageHandleTime: '',
-        queue: ''
+        queue: '',
+        agents: [{name: 'Jon', status: 'available'}, {name: 'Nancy', status: 'unavailable'}]
     }
 
 async componentDidMount() {
@@ -54,45 +55,63 @@ async componentDidMount() {
     });   
 };
 
-// async componentDidUpdate() {
-//     setTimeout(this, 300000)
-//     await axios.get('/api/data')
-//     .then(({data}) => {
-//         this.setState({data: data})
-//         console.log(this.state.data);
-//     }).catch(err => {
-//         console.log(err.message);
-//     });
-//     await axios.get('/api/csat')
-//         .then((res) => {
-//             this.setState({csat: res.data})
-//             console.log(`CSAT: ${this.state.csat}`)
-//         }).catch(err => {
-//             console.log(err.message);
-//         });
-//     await axios.get('/api/callsAnswered')
-//     .then((res) => {
-//         this.setState({callsAnswered: res.data})
-//         console.log(`Calls Answered: ${this.state.callsAnswered}`)
-//     }).catch(err => {
-//         console.log(err.message);
-//     });
-//     await axios.get('/api/averageHandleTime')
-//     .then((res) => {
-//         this.setState({averageHandleTime: res.data})
-//         console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
-//     }).catch(err => {
-//         console.log(err.message);
-//     });
-//     await axios.get('/api/queue')
-//     .then((res) => {
-//         this.setState({queue: res.data})
-//         console.log(`Queue: ${this.state.queue}`)
-//     }).catch(err => {
-//         console.log(err.message);
-//     });
-//   }
-
+async componentDidUpdate() {
+    await axios.get('/api/data')
+    .then(({data}) => {
+        setTimeout(() => {
+            this.setState({
+            data: data
+          })
+          console.log(this.state.data)
+        }, 9000);
+    }).catch(err => {
+        console.log(err.message);
+    });
+    await axios.get('/api/csat')
+        .then((res) => {
+            setTimeout(() => {
+                this.setState({
+                csat: res.data
+                })
+                console.log(`CSAT: ${this.state.csat}`)
+            }, 7000);
+        }).catch(err => {
+            console.log(err.message);
+        });
+    await axios.get('/api/callsAnswered')
+        .then((res) => {
+            setTimeout(() => {
+                this.setState({
+                callsAnswered: res.data
+                })
+                console.log(`Calls Answered: ${this.state.callsAnswered}`)
+            }, 7000);
+        }).catch(err => {
+            console.log(err.message);
+        });
+    await axios.get('/api/averageHandleTime')
+        .then((res) => {
+            setTimeout(() => {
+                this.setState({
+                averageHandleTime: res.data
+                })
+                console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
+            }, 7000);
+        }).catch(err => {
+            console.log(err.message);
+        });
+    await axios.get('/api/queue')
+        .then((res) => {
+            setTimeout(() => {
+                this.setState({
+                queue: res.data
+                })
+                console.log(`Queue: ${this.state.queue}`)
+            }, 7000);
+        }).catch(err => {
+            console.log(err.message);
+        });
+  }
 
     render()   {
         return  (
@@ -114,7 +133,8 @@ async componentDidMount() {
                         averageHandleTime={this.state.averageHandleTime}
                     />
                     <Graph 
-                        data={this.state.data}/>
+                        data={this.state.data}
+                    />
                 </Grid.Row>
             </Grid>
             </div>
