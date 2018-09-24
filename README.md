@@ -7,7 +7,7 @@ Call center dashboard that will display key performance indicators for employee 
 Robert Garcia
 
 ### Directions to Use
-* First, in root directory npm install
+* First, in root directory yarn.
 * Second, cd client and yarn install. 
 * Third, in root file nodemon index.js and cd client yarn start.
 
