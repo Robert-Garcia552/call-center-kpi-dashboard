@@ -77,7 +77,7 @@ async componentDidUpdate() {
         data: data
         })
       console.log(this.state.data)
-      }, 9000);
+      }, 15000);
     }).catch(err => {
       console.log(err.message);
     });
@@ -88,7 +88,7 @@ async componentDidUpdate() {
         csat: res.data
         })
         console.log(`CSAT: ${this.state.csat}`)
-      }, 7000);
+      }, 10000);
     }).catch(err => {
       console.log(err.message);
     });
@@ -99,7 +99,7 @@ async componentDidUpdate() {
         callsAnswered: res.data
         })
         console.log(`Calls Answered: ${this.state.callsAnswered}`)
-      }, 7000);
+      }, 10000);
     }).catch(err => {
         console.log(err.message);
     });
@@ -110,7 +110,7 @@ async componentDidUpdate() {
         averageHandleTime: res.data
         })
         console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
-      }, 7000);
+      }, 10000);
     }).catch(err => {
       console.log(err.message);
     });
@@ -121,7 +121,7 @@ async componentDidUpdate() {
         queue: res.data
         })
         console.log(`Queue: ${this.state.queue}`)
-      }, 7000);
+      }, 10000);
     }).catch(err => {
       console.log(err.message);
     });
