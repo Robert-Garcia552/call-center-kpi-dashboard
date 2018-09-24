@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Icon } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 
 
 const card = {
@@ -9,6 +9,8 @@ const card = {
     justifyContent:'center'
 }
 
+
+
 class Csat extends Component   {
 
     render()   {
@@ -16,7 +18,7 @@ class Csat extends Component   {
             <div>
                 <Card style={card}>
                     <h1>CSAT</h1>
-                    <h3>{Math.floor(Math.random() * 20)}%</h3>
+                    <h3>{this.props.csat} %</h3>
                 </Card>
             </div>
         );

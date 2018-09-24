@@ -17,6 +17,10 @@ app.get('/api/data', (req, res) => {
     res.send(chartData)
 });
 
+app.get('/api/csat', (req, res) => {
+    res.send(`${Math.floor(Math.random() * 20)}`);
+})
+
 app.listen(port, function() {
     console.log(`Listening on port ${port}!`)
     })
