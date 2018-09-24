@@ -21,6 +21,10 @@ app.get('/api/csat', (req, res) => {
     res.send(`${Math.floor(Math.random() * 20)}`);
 })
 
+app.get('/api/callsAnswered', (req, res) => {
+    res.send(`${Math.floor(Math.random() * 20)}`);
+})
+
 app.listen(port, function() {
     console.log(`Listening on port ${port}!`)
     })

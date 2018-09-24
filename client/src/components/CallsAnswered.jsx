@@ -17,7 +17,7 @@ class CallsAnswered extends Component   {
                 <div>
                     <Card style={card}>
                     <h1>Calls Answered</h1>
-                    <h3>{Math.floor(Math.random() * 20)}</h3>
+                    <h3>{this.props.callsAnswered}</h3>
                     </Card>
                 </div>
             </div>

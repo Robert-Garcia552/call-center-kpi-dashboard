@@ -10,7 +10,8 @@ import axios from 'axios';
 class Dashboard extends Component   {
     state = {
         data: [],
-        csat: ''
+        csat: '',
+        callsAnswered: ''
     }
 
 
@@ -30,6 +31,15 @@ async componentDidMount() {
         }).catch(err => {
             console.log(err.message);
         });
+    await axios.get('/api/callsAnswered')
+    .then((res) => {
+        this.setState({callsAnswered: res.data})
+        console.log(this.state.callsAnswered)
+    }).catch(err => {
+        console.log(err.message);
+    });
+  
+    
 };
 
 // async componentDidUpdate(prevState) {
@@ -51,7 +61,9 @@ async componentDidMount() {
             <div>
             <Grid centered columns='equal'>
                 <Grid.Row  columns={2} style={{marginTop: '20px'}}>
-                    <CallsAnswered/>
+                    <CallsAnswered
+                        callsAnswered={this.state.callsAnswered}
+                    />
                     <Queue/>
                 </Grid.Row>
                 <Grid.Row  columns={2}>
