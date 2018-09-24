@@ -10,4 +10,4 @@ Robert Garcia
 Work in progress.
 
 ### License
-No License specified. Please reference https://choosealicense.com/no-permission/.
+MIT
