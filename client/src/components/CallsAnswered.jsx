@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Card } from 'semantic-ui-react'
-import '../Card.css';
 
 const card = {
     width: '300px',

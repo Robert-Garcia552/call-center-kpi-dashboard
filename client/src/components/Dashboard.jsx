@@ -6,7 +6,6 @@ import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
 import { Grid } from 'semantic-ui-react';
 import axios from 'axios';
-import '../Card.css';
 
 class Dashboard extends Component   {
     state = {
@@ -55,17 +54,43 @@ async componentDidMount() {
     });   
 };
 
-// async componentDidUpdate(prevState) {
+// async componentDidUpdate() {
+//     setTimeout(this, 300000)
 //     await axios.get('/api/data')
-//     .then(setInterval(5000), ({data}) => {
-//             var result = { data }
-//             console.log(this.state.data);
-//             if (result !== prevState) {
-//                 this.setState({data: data});
-//               }
-//           }).catch(err => {
+//     .then(({data}) => {
+//         this.setState({data: data})
+//         console.log(this.state.data);
+//     }).catch(err => {
+//         console.log(err.message);
+//     });
+//     await axios.get('/api/csat')
+//         .then((res) => {
+//             this.setState({csat: res.data})
+//             console.log(`CSAT: ${this.state.csat}`)
+//         }).catch(err => {
 //             console.log(err.message);
-//           });
+//         });
+//     await axios.get('/api/callsAnswered')
+//     .then((res) => {
+//         this.setState({callsAnswered: res.data})
+//         console.log(`Calls Answered: ${this.state.callsAnswered}`)
+//     }).catch(err => {
+//         console.log(err.message);
+//     });
+//     await axios.get('/api/averageHandleTime')
+//     .then((res) => {
+//         this.setState({averageHandleTime: res.data})
+//         console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
+//     }).catch(err => {
+//         console.log(err.message);
+//     });
+//     await axios.get('/api/queue')
+//     .then((res) => {
+//         this.setState({queue: res.data})
+//         console.log(`Queue: ${this.state.queue}`)
+//     }).catch(err => {
+//         console.log(err.message);
+//     });
 //   }
 
 
@@ -73,7 +98,7 @@ async componentDidMount() {
         return  (
             <div>
             <Grid centered columns='equal'>
-                <Grid.Row  columns={2} id="toprow">
+                <Grid.Row  columns={2} style={{marginTop: '20px'}}>
                     <CallsAnswered
                         callsAnswered={this.state.callsAnswered}
                     />
