@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const card = {
   width: '300px',
-  height: '300px',
+  height: '200px',
   textAlign: 'center',
   justifyContent:'center'
 }

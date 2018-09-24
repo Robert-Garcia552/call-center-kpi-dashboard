@@ -3,7 +3,7 @@ import { Card } from 'semantic-ui-react'
 
 const card = {
   width: '300px',
-  height: '300px',
+  height: '200px',
   textAlign: 'center',
   justifyContent:'center'
 }
