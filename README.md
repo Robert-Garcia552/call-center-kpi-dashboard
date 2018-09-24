@@ -15,4 +15,4 @@ Robert Garcia
 Work in progress.
 
 ### License
-MIT
+No license specified.
