@@ -4,8 +4,17 @@ import Queue from './Queue';
 import Csat from './Csat';
 import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
+import Agents from './Agents';
 import { Grid } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import axios from 'axios';
+
+const card = {
+    width: '300px',
+    height: '300px',
+    textAlign: 'center',
+    justifyContent:'center'
+}
 
 class Dashboard extends Component   {
     state = {
@@ -14,7 +23,12 @@ class Dashboard extends Component   {
         callsAnswered: '',
         averageHandleTime: '',
         queue: '',
-        agents: [{name: 'Jon', status: 'available'}, {name: 'Nancy', status: 'unavailable'}]
+        agents: [
+                {name: 'Jon', status: 'available'}, 
+                {name: 'Nancy', status: 'unavailable'},
+                {name: 'Tim', status: 'available'},
+                {name: 'Jack', status: 'available'}
+                ]
     }
 
 async componentDidMount() {
@@ -135,6 +149,14 @@ async componentDidUpdate() {
                     <Graph 
                         data={this.state.data}
                     />
+                </Grid.Row>
+                <Grid.Row columns={1}>
+                    <Card style={card}>
+                        <h1>Agents Scheduled</h1>
+                        {this.state.agents.map((agent) => {
+                            return <Agents agent={agent} />
+                        })}
+                    </Card>
                 </Grid.Row>
             </Grid>
             </div>

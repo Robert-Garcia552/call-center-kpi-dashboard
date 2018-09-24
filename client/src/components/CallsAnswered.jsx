@@ -16,7 +16,7 @@ class CallsAnswered extends Component   {
                 <div>
                     <Card style={card}>
                     <h1>Calls Answered</h1>
-                    <h3>{this.props.callsAnswered}</h3>
+                    <h2>{this.props.callsAnswered}</h2>
                     </Card>
                 </div>
             </div>

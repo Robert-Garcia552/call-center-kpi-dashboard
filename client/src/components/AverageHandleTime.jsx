@@ -16,7 +16,7 @@ class AverageHandleTime extends Component   {
             <div>
                 <Card style={card}>
                     <h1>Average Handle Time</h1>
-                    <h3>{this.props.averageHandleTime} mins</h3>
+                    <h2>{this.props.averageHandleTime} mins</h2>
                 </Card>
             </div>
         );

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Card } from 'semantic-ui-react';
 
-
 const card = {
     width: '300px',
     height: '300px',
@@ -9,17 +8,12 @@ const card = {
     justifyContent:'center'
 }
 
-
-
-class Csat extends Component   {
+class Agents extends Component   {
 
     render()   {
         return (
             <div>
-                <Card style={card}>
-                    <h1>CSAT</h1>
-                    <h2>{this.props.csat} %</h2>
-                </Card>
+                <h2>{this.props.agent.name} is {this.props.agent.status}</h2>
             </div>
         );
     }
@@ -27,4 +21,4 @@ class Csat extends Component   {
 
 };
 
-export default Csat;
+export default Agents;

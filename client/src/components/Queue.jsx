@@ -15,7 +15,7 @@ class Queue extends Component   {
             <div>
                 <Card style={card}>
                     <h1>Queue</h1>
-                    <h3>{this.props.queue}</h3>
+                    <h2>{this.props.queue}</h2>
                 </Card>
             </div>
         );
