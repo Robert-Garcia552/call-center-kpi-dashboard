@@ -1,28 +1,27 @@
 import React, {Component} from 'react';
-import { Card, Icon } from 'semantic-ui-react'
-import '../Card.css';
+import { Card } from 'semantic-ui-react'
 
 const card = {
-    width: '300px',
-    height: '300px',
-    textAlign: 'center',
-    justifyContent:'center'
+  width: '300px',
+  height: '300px',
+  textAlign: 'center',
+  justifyContent:'center'
 }
 
 class CallsAnswered extends Component   {
 
-    render()   {
-        return (
-            <div>
-                <div>
-                    <Card style={card}>
-                    <h1>Calls Answered</h1>
-                    <h3>{Math.floor(Math.random() * 20)}</h3>
-                    </Card>
-                </div>
-            </div>
-        )
-    }
+  render()   {
+    return (
+      <div>
+        <div>
+          <Card style={card}>
+            <h1>Calls Answered</h1>
+            <h2>{this.props.callsAnswered}</h2>
+          </Card>
+        </div>
+      </div>
+    )
+  }
 
 };
 

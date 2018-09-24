@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Icon } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 const card = {
     width: '300px',
@@ -15,7 +15,7 @@ class Queue extends Component   {
             <div>
                 <Card style={card}>
                     <h1>Queue</h1>
-                    <h3>{Math.floor(Math.random() * 20)}</h3>
+                    <h2>{this.props.queue}</h2>
                 </Card>
             </div>
         );
