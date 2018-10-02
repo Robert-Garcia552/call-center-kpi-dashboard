@@ -10,7 +10,6 @@ const card = {
 }
 
 class AverageHandleTime extends Component   {
-
   render()   {
     return (
       <div>
@@ -21,7 +20,6 @@ class AverageHandleTime extends Component   {
       </div>
     );
   }
-
 };
 
 export default AverageHandleTime;

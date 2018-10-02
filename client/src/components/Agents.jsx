@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 class Agents extends Component   {
-
   render()   {
     return (
       <div>
@@ -9,7 +8,5 @@ class Agents extends Component   {
       </div>
     )
   }
-
 };
-
 export default Agents;

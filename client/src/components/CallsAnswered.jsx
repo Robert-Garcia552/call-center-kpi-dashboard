@@ -9,7 +9,6 @@ const card = {
 }
 
 class CallsAnswered extends Component   {
-
   render()   {
     return (
       <div>
@@ -22,7 +21,6 @@ class CallsAnswered extends Component   {
       </div>
     )
   }
-
 };
 
 export default CallsAnswered;

@@ -9,7 +9,6 @@ const card = {
 }
 
 class Queue extends Component   {
-
     render()   {
         return (
             <div>
@@ -20,8 +19,6 @@ class Queue extends Component   {
             </div>
         );
     }
-
-
 };
 
 export default Queue;

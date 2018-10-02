@@ -5,30 +5,39 @@ import Csat from './Csat';
 import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
 import Agents from './Agents';
-import { Grid } from 'semantic-ui-react';
-import { Card } from 'semantic-ui-react';
+import MissedCalls from './MissedCalls';
+import { Card, Grid } from 'semantic-ui-react';
 import axios from 'axios';
 
 const card = {
   width: '300px',
-  height: '200px',
+  height: '300px',
   textAlign: 'center',
   justifyContent:'center'
 }
 
 class Dashboard extends Component   {
   state = {
-    data: [],
-    csat: '',
-    callsAnswered: '',
-    averageHandleTime: '',
-    queue: '',
+    data: [
+        {x: 'Sunday', y: 0},
+        {x: 'Monday', y: 0},
+        {x: 'Tuesday', y: 0},
+        {x: 'Wednesday', y: 0},
+        {x: 'Thursday', y: 0},
+        {x: 'Friday', y: 0},
+        {x: 'Saturday', y: 0}
+    ],
+    csat: '0',
+    callsAnswered: '0',
+    averageHandleTime: '0',
+    queue: '0',
     agents: [
             {name: 'Jon', status: 'available'}, 
             {name: 'Nancy', status: 'unavailable'},
             {name: 'Tim', status: 'available'},
             {name: 'Jack', status: 'available'}
-            ]
+            ],
+    missed_calls: ''
   }
   pollInterval = null
 
@@ -37,7 +46,7 @@ componentDidMount() {
  if(this.pollInterval == null) {
    this.pollInterval = setInterval(this.loadDataFromServer, 15000);
  }
-  }
+}
   
 loadDataFromServer = () => {
   axios.get('/api/data')
@@ -74,7 +83,14 @@ loadDataFromServer = () => {
       console.log(`Queue: ${this.state.queue}`)
     }).catch(err => {
       console.log(err.message);
-    });   
+    });
+  axios.get('/api/missed-calls')
+  .then((res) => {
+    this.setState({missed_calls: res.data})
+    console.log(`Missed Calls: ${this.state.missed_calls}`)
+  }).catch(err => {
+    console.log(err.message);
+  });
 };
 
   render()   {
@@ -100,19 +116,21 @@ loadDataFromServer = () => {
                 data={this.state.data}
               />
           </Grid.Row>
-          <Grid.Row columns={1}>
-            <Card style={card}>
+          <Grid.Row columns={2}>
+            <Card style={card} >
               <h1>Agents Scheduled</h1>
               {this.state.agents.map((agent) => {
                   return <Agents agent={agent} />
               })}
             </Card>
+              <MissedCalls 
+                gauge={this.state.missed_calls}
+              />
           </Grid.Row>
         </Grid>
       </div>
     );
   }
-
 };
 
 export default Dashboard;

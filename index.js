@@ -23,6 +23,10 @@ app.get('/api/dashboard', (req, res) => {
     res.send(`${Math.floor(Math.random() * 40)}`);
 })
 
+app.get('/api/missed-calls', (req, res) => {
+    res.send(`${Math.floor(Math.random(2) * Math.floor(5))}`);
+})
+
 app.listen(port, function() {
     console.log(`Listening on port ${port}!`)
     })

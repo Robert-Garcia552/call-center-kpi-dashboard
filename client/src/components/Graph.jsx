@@ -31,7 +31,6 @@ class Graph extends Component   {
       </div>
     )
   }
-
 };
 
 export default Graph;
