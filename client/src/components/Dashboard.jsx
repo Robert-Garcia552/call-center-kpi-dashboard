@@ -19,11 +19,19 @@ const card = {
 
 class Dashboard extends Component   {
   state = {
-    data: [],
-    csat: '',
-    callsAnswered: '',
-    averageHandleTime: '',
-    queue: '',
+    data: [
+      {x: 'Sunday', y: 0},
+        {x: 'Monday', y: 0},
+        {x: 'Tuesday', y: 0},
+        {x: 'Wednesday', y: 0},
+        {x: 'Thursday', y: 0},
+        {x: 'Friday', y: 0},
+        {x: 'Saturday', y: 0}
+    ],
+    csat: '0',
+    callsAnswered: '0',
+    averageHandleTime: '0',
+    queue: '0',
     agents: [
             {name: 'Jon', status: 'available'}, 
             {name: 'Nancy', status: 'unavailable'},
@@ -77,7 +85,7 @@ loadDataFromServer = () => {
     }).catch(err => {
       console.log(err.message);
     });
-  axios.get('/api/dashboard')
+  axios.get('/api/missed-calls')
   .then((res) => {
     this.setState({missed_calls: res.data})
     console.log(`Missed Calls: ${this.state.missed_calls}`)

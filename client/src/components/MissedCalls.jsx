@@ -18,7 +18,8 @@ class MissedCalls extends Component   {
             <ReactSpeedometer 
                 value={this.props.gauge}
                 minValue={0}
-                maxValue={30}
+                maxValue={10}
+                segments={5}
                 fluidWidth
             />
           </Card>
