@@ -35,7 +35,7 @@ class Dashboard extends Component   {
 componentDidMount() {
  this.loadDataFromServer
  if(this.pollInterval == null) {
-   this.pollInterval = setInterval(this.loadDataFromServer, 5000);
+   this.pollInterval = setInterval(this.loadDataFromServer, 10000);
  }
   }
   
