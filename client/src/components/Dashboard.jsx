@@ -6,8 +6,7 @@ import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
 import Agents from './Agents';
 import MissedCalls from './MissedCalls';
-import { Grid } from 'semantic-ui-react';
-import { Card } from 'semantic-ui-react';
+import { Card, Grid } from 'semantic-ui-react';
 import axios from 'axios';
 
 const card = {
