@@ -5,13 +5,14 @@ import Csat from './Csat';
 import AverageHandleTime from './AverageHandleTime';
 import Graph from './Graph';
 import Agents from './Agents';
+import MissedCalls from './MissedCalls';
 import { Grid } from 'semantic-ui-react';
 import { Card } from 'semantic-ui-react';
 import axios from 'axios';
 
 const card = {
   width: '300px',
-  height: '200px',
+  height: '300px',
   textAlign: 'center',
   justifyContent:'center'
 }
@@ -28,7 +29,8 @@ class Dashboard extends Component   {
             {name: 'Nancy', status: 'unavailable'},
             {name: 'Tim', status: 'available'},
             {name: 'Jack', status: 'available'}
-            ]
+            ],
+    missed_calls: ''
   }
   pollInterval = null
 
@@ -37,7 +39,7 @@ componentDidMount() {
  if(this.pollInterval == null) {
    this.pollInterval = setInterval(this.loadDataFromServer, 15000);
  }
-  }
+}
   
 loadDataFromServer = () => {
   axios.get('/api/data')
@@ -74,7 +76,14 @@ loadDataFromServer = () => {
       console.log(`Queue: ${this.state.queue}`)
     }).catch(err => {
       console.log(err.message);
-    });   
+    });
+  axios.get('/api/dashboard')
+  .then((res) => {
+    this.setState({missed_calls: res.data})
+    console.log(`Missed Calls: ${this.state.missed_calls}`)
+  }).catch(err => {
+    console.log(err.message);
+  });
 };
 
   render()   {
@@ -100,13 +109,16 @@ loadDataFromServer = () => {
                 data={this.state.data}
               />
           </Grid.Row>
-          <Grid.Row columns={1}>
-            <Card style={card}>
+          <Grid.Row columns={2}>
+            <Card style={card} >
               <h1>Agents Scheduled</h1>
               {this.state.agents.map((agent) => {
                   return <Agents agent={agent} />
               })}
             </Card>
+              <MissedCalls 
+                gauge={this.state.missed_calls}
+              />
           </Grid.Row>
         </Grid>
       </div>
