@@ -30,37 +30,45 @@ class Dashboard extends Component   {
             {name: 'Jack', status: 'available'}
             ]
   }
+  pollInterval = null
 
-async componentDidMount() {
-  await axios.get('/api/data')
+componentDidMount() {
+ this.loadDataFromServer
+ if(this.pollInterval == null) {
+   this.pollInterval = setInterval(this.loadDataFromServer, 5000);
+ }
+  }
+  
+  loadDataFromServer = () => {
+    axios.get('/api/data')
     .then(({data}) => {
       this.setState({data: data})
       console.log(this.state.data);
     }).catch(err => {
       console.log(err.message);
     });
-  await axios.get('/api/csat')
+  axios.get('/api/dashboard')
     .then((res) => {
       this.setState({csat: res.data})
       console.log(`CSAT: ${this.state.csat}`)
     }).catch(err => {
       console.log(err.message);
     });
-  await axios.get('/api/callsAnswered')
+  axios.get('/api/dashboard')
     .then((res) => {
       this.setState({callsAnswered: res.data})
       console.log(`Calls Answered: ${this.state.callsAnswered}`)
     }).catch(err => {
       console.log(err.message);
     });
-  await axios.get('/api/averageHandleTime')
+  axios.get('/api/dashboard')
     .then((res) => {
       this.setState({averageHandleTime: res.data})
       console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
     }).catch(err => {
       console.log(err.message);
     });
-  await axios.get('/api/queue')
+  axios.get('/api/dashboard')
     .then((res) => {
       this.setState({queue: res.data})
       console.log(`Queue: ${this.state.queue}`)
@@ -68,64 +76,6 @@ async componentDidMount() {
       console.log(err.message);
     });   
 };
-
-async componentDidUpdate() {
-  await axios.get('/api/data')
-    .then(({data}) => {
-      setTimeout(() => {
-        this.setState({
-        data: data
-        })
-      console.log(this.state.data)
-      }, 15000);
-    }).catch(err => {
-      console.log(err.message);
-    });
-  await axios.get('/api/csat')
-    .then((res) => {
-      setTimeout(() => {
-        this.setState({
-        csat: res.data
-        })
-        console.log(`CSAT: ${this.state.csat}`)
-      }, 10000);
-    }).catch(err => {
-      console.log(err.message);
-    });
-  await axios.get('/api/callsAnswered')
-    .then((res) => {
-      setTimeout(() => {
-        this.setState({
-        callsAnswered: res.data
-        })
-        console.log(`Calls Answered: ${this.state.callsAnswered}`)
-      }, 10000);
-    }).catch(err => {
-        console.log(err.message);
-    });
-  await axios.get('/api/averageHandleTime')
-    .then((res) => {
-      setTimeout(() => {
-        this.setState({
-        averageHandleTime: res.data
-        })
-        console.log(`Average Handle Time: ${this.state.averageHandleTime}`)
-      }, 10000);
-    }).catch(err => {
-      console.log(err.message);
-    });
-  await axios.get('/api/queue')
-    .then((res) => {
-      setTimeout(() => {
-        this.setState({
-        queue: res.data
-        })
-        console.log(`Queue: ${this.state.queue}`)
-      }, 10000);
-    }).catch(err => {
-      console.log(err.message);
-    });
-  }
 
   render()   {
     return  (
