@@ -7,12 +7,10 @@ Call center dashboard that will display key performance indicators for employee 
 Robert Garcia
 
 ### Directions to Use
-* First, in root directory yarn.
-* Second, cd client and yarn install. 
-* Third, in root file nodemon index.js and cd client yarn start.
+* First, git clone directory.
+* Second, in root directory yarn.
+* Third, cd client and yarn install. 
+* Fourth, in root file nodemon index.js and cd client yarn start.
 
 ### Status
 Work in progress.
-
-### License
-No license specified.
