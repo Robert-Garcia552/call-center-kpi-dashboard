@@ -19,13 +19,13 @@ const card = {
 class Dashboard extends Component   {
   state = {
     data: [
-        {x: 'Sunday', y: 0},
-        {x: 'Monday', y: 0},
-        {x: 'Tuesday', y: 0},
-        {x: 'Wednesday', y: 0},
-        {x: 'Thursday', y: 0},
-        {x: 'Friday', y: 0},
-        {x: 'Saturday', y: 0}
+        {x: 'Sunday', y: 1},
+        {x: 'Monday', y: 1},
+        {x: 'Tuesday', y: 1},
+        {x: 'Wednesday', y: 1},
+        {x: 'Thursday', y: 1},
+        {x: 'Friday', y: 1},
+        {x: 'Saturday', y: 1}
     ],
     csat: '0',
     callsAnswered: '0',
@@ -37,14 +37,14 @@ class Dashboard extends Component   {
             {name: 'Tim', status: 'available'},
             {name: 'Jack', status: 'available'}
             ],
-    missed_calls: ''
+    missed_calls: '3'
   }
   pollInterval = null
 
 componentDidMount() {
  this.loadDataFromServer
  if(this.pollInterval == null) {
-   this.pollInterval = setInterval(this.loadDataFromServer, 15000);
+   this.pollInterval = setInterval(this.loadDataFromServer, 8000);
  }
 }
   
