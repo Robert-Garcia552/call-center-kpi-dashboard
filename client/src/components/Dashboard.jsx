@@ -39,14 +39,14 @@ componentDidMount() {
  }
   }
   
-  loadDataFromServer = () => {
-    axios.get('/api/data')
-    .then(({data}) => {
-      this.setState({data: data})
-      console.log(this.state.data);
-    }).catch(err => {
-      console.log(err.message);
-    });
+loadDataFromServer = () => {
+  axios.get('/api/data')
+  .then(({data}) => {
+    this.setState({data: data})
+    console.log(this.state.data);
+  }).catch(err => {
+    console.log(err.message);
+  });
   axios.get('/api/dashboard')
     .then((res) => {
       this.setState({csat: res.data})
