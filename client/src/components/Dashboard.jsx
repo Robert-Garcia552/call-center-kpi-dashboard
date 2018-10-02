@@ -19,7 +19,7 @@ const card = {
 class Dashboard extends Component   {
   state = {
     data: [
-      {x: 'Sunday', y: 0},
+        {x: 'Sunday', y: 0},
         {x: 'Monday', y: 0},
         {x: 'Tuesday', y: 0},
         {x: 'Wednesday', y: 0},
@@ -131,7 +131,6 @@ loadDataFromServer = () => {
       </div>
     );
   }
-
 };
 
 export default Dashboard;

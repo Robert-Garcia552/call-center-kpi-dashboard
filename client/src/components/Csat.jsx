@@ -10,7 +10,6 @@ const card = {
 }
 
 class Csat extends Component   {
-
   render()   {
     return (
       <div>
@@ -21,8 +20,6 @@ class Csat extends Component   {
       </div>
     );
   }
-
-
 };
 
 export default Csat;

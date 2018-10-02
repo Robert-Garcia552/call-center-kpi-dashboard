@@ -9,24 +9,22 @@ const card = {
   }
   
 class MissedCalls extends Component   {
-  
-    render()   {
-      return (
-        <div>
-          <Card style={card}>
-            <h1 style={{paddingBottom: '30px'}}>Missed Calls</h1>
-            <ReactSpeedometer 
-                value={this.props.gauge}
-                minValue={0}
-                maxValue={10}
-                segments={5}
-                fluidWidth
-            />
-          </Card>
-        </div>
-      );
-    }
-  
-  };
+  render()   {
+    return (
+      <div>
+        <Card style={card}>
+          <h1 style={{paddingBottom: '30px'}}>Missed Calls</h1>
+          <ReactSpeedometer 
+              value={this.props.gauge}
+              minValue={0}
+              maxValue={10}
+              segments={5}
+              fluidWidth
+          />
+        </Card>
+      </div>
+    );
+  }
+};
   
   export default MissedCalls;
