@@ -19,6 +19,8 @@ class MissedCalls extends Component   {
               minValue={0}
               maxValue={10}
               segments={5}
+              startColor={'#33CC33'}
+              endColor={'#FF0000'}
               fluidWidth
           />
         </Card>
