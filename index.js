@@ -3,6 +3,9 @@ const app = express();
 
 var port = process.env.PORT || 5000;
 
+
+app.use(express.static(__dirname + '/client/build'));
+
 app.get('/api/data', (req, res) => {
     let chartData = [
         {x: 'Sunday', y: Math.floor(Math.random() * 20)},
